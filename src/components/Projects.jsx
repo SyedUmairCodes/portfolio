@@ -13,7 +13,7 @@ const projectsData = [
     id: 2,
     iconType: "text",
     iconText: "UI",
-    iconBgClass: "bg-blue-700",
+    iconBgClass: "bg-indigo-600",
     iconContentClass: "text-white font-bold text-sm",
     title: "UI experiments",
     description:
@@ -26,7 +26,7 @@ const ProjectCard = ({ project }) => {
   return (
     <motion.a
       href={project.href}
-      className="block bg-onyx p-6 rounded-lg hover:bg-onyx/70 transition-colors duration-200 group"
+      className="block bg-neutral-800 p-6 rounded-lg hover:bg-neutral-700 transition-colors duration-200 group"
       target={project.href !== "#" ? "_blank" : undefined}
       rel={project.href !== "#" ? "noopener noreferrer" : undefined}
       initial={{ opacity: 0, y: 20 }}
@@ -35,8 +35,8 @@ const ProjectCard = ({ project }) => {
     >
       <div className="flex items-center mb-4">
         {project.iconType === "Crown" && (
-          <div className="p-2 rounded-md mr-4 bg-blue-500">
-            <Crown className="w-5 h-5 text-platinum" />
+          <div className="p-2 rounded-md mr-4 bg-yellow-500">
+            <Crown className="w-5 h-5" />
           </div>
         )}
         {project.iconType === "text" && (
@@ -46,13 +46,11 @@ const ProjectCard = ({ project }) => {
             <span className={project.iconContentClass}>{project.iconText}</span>
           </div>
         )}
-        <h3 className="text-xl font-semibold text-platinum transition-colors duration-200">
+        <h3 className="text-xl font-semibold text-disco transition-colors duration-200">
           {project.title}
         </h3>
       </div>
-      <p className="text-ash text-base group-hover:text-platinum transition-colors duration-200">
-        {project.description}
-      </p>
+      <p className="text-disco text-base">{project.description}</p>
     </motion.a>
   );
 };
@@ -60,7 +58,7 @@ const ProjectCard = ({ project }) => {
 const SideProjects = () => {
   return (
     <section className="container mx-auto px-8 py-12 md:py-16">
-      <h2 className="text-2xl font-medium text-platinum mb-8">Side projects</h2>
+      <h2 className="text-2xl font-medium mb-8">Side projects</h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {projectsData.map((project) => (
           <ProjectCard key={project.id} project={project} />

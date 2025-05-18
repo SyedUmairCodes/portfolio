@@ -31,7 +31,7 @@ const Hero = () => {
       transition={{ duration: 0.6 }}
     >
       <motion.h1
-        className="text-2xl md:text-5xl font-bold text-platinum mb-6"
+        className="text-2xl md:text-5xl font-bold mb-6"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.6 }}
@@ -39,13 +39,12 @@ const Hero = () => {
         Hey, I'm Syed Umair Ali
       </motion.h1>
       <motion.p
-        className="text-xl md:text-3xl text-ash mb-10 max-w-3xl"
+        className="text-xl md:text-3xl mb-10 max-w-3xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4, duration: 0.6 }}
       >
-        Software engineer specializing in web development, from Karachi,
-        Pakistan.
+        Software Engineer with Expertise in Web Development, based in Karachi.
       </motion.p>
       <motion.div
         className="flex flex-wrap gap-x-4 md:gap-x-6 lg:gap-x-8 gap-y-2"
@@ -59,7 +58,7 @@ const Hero = () => {
             href={link.href}
             target={link.target}
             rel={link.rel}
-            className="text-lg md:text-xl lg:text-2xl text-ash hover:text-platinum"
+            className="text-lg md:text-xl lg:text-2xl text-white hover:text-white/80 transition-colors duration-300"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 + index * 0.1, duration: 0.5 }}

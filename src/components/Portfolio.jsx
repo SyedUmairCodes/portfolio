@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import blockforgeImage from "../assets/blockforge.jpg";
+import blockforgeImage from "../assets/blockforge.png";
 const portfolioData = [
   {
     id: 1,
@@ -35,12 +35,10 @@ const PortfolioCard = ({ study }) => {
             className="w-full h-auto object-cover aspect-[16/9] md:aspect-[2.2/1] group-hover:scale-105 transition-transform duration-300"
           />
         </div>
-        <h3 className="text-2xl font-semibold text-platinum mb-1 group-hover:text-platinum transition-colors">
+        <h3 className="text-2xl font-semibold text-disco mb-1 group-hover:text-neutral-100 transition-colors">
           {study.title}
         </h3>
-        <p className="text-lg text-platinum mb-3 group-hover:text-ash transition-colors">
-          {study.subtitle}
-        </p>
+        <p className="text-lg  mb-3">{study.subtitle}</p>
       </a>
     </article>
   );
@@ -56,7 +54,7 @@ const Portfolio = () => {
       transition={{ duration: 0.6 }}
     >
       <motion.h2
-        className="text-2xl font-medium text-platinum mb-10"
+        className="text-2xl font-medium mb-10"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}

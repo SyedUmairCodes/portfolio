@@ -34,7 +34,7 @@ const Footer = () => {
         transition={{ duration: 0.7 }}
       >
         <motion.p
-          className="text-lg md:text-xl lg:text-2xl text-platinum text-center md:text-left"
+          className="text-lg md:text-xl lg:text-2xl text-white text-center md:text-left"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -56,7 +56,7 @@ const Footer = () => {
               href={link.href}
               target={link.target}
               rel={link.rel}
-              className="text-lg md:text-xl lg:text-2xl text-ash hover:text-platinum transition-colors"
+              className="text-lg md:text-xl lg:text-2xl text-white hover:text-white/80 transition-colors"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}

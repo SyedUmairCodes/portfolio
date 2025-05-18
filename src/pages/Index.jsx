@@ -5,7 +5,7 @@ import Portfolio from "../components/Portfolio";
 import SideProjects from "../components/Projects";
 const Index = () => {
   return (
-    <div className="bg-jetblack text-platinum min-h-screen font-sans antialiased">
+    <div className="bg-background text-white min-h-screen font-sans antialiased">
       <Header />
       <Hero />
       <SideProjects />

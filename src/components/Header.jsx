@@ -10,7 +10,7 @@ const Header = () => {
       <nav className="flex justify-between items-center">
         <motion.a
           href="/"
-          className="text-lg md:text-xl lg:text-2xl font-bold text-platinum hover:text-ash"
+          className="text-lg md:text-xl lg:text-2xl font-bold text-white hover:text-white/80"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
@@ -19,7 +19,7 @@ const Header = () => {
         </motion.a>
         <motion.a
           href="/about"
-          className="text-lg md:text-xl lg:text-2xl font-medium text-platinum hover:text-ash"
+          className="text-lg md:text-xl lg:text-2xl font-medium text-white hover:text-white/80"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.5 }}

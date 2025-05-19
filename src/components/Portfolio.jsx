@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import blockforgeImage from "../assets/blockforge.png";
+import sushipuccinImage from "../assets/sushi.png";
 const portfolioData = [
   {
     id: 1,
@@ -8,6 +9,14 @@ const portfolioData = [
     imageUrl: blockforgeImage,
     linkUrl: "https://blockchainforge.netlify.app",
     altText: "Screenshot of Blockforge project",
+  },
+  {
+    id: 2,
+    title: "Sushipuccin",
+    subtitle: "Traditional Japanese cusine with a twist",
+    imageUrl: sushipuccinImage,
+    linkUrl: "https://sushippuccin.netlify.app/",
+    altText: "Screenshot of Sushipuccin project",
   },
 ];
 

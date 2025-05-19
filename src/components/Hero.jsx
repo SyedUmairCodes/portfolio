@@ -44,7 +44,8 @@ const Hero = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4, duration: 0.6 }}
       >
-        Software Engineer with Expertise in Web Development, based in Karachi.
+        A multidisciplinary developer with a passion for creating beautiful and
+        functional web applications.
       </motion.p>
       <motion.div
         className="flex flex-wrap gap-x-4 md:gap-x-6 lg:gap-x-8 gap-y-2"

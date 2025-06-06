@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+
+:root {
+  --background-color: #000000;
+  --background-color-light: #0a0a0a;
+  --text-color: #ebebeb;
+  --text-font: "Geist", sans-serif;
+  --decoration-color: #292929;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: var(--text-font);
+}
+
+.container {
+  width: 100%;
+  max-width: 450px;
+  text-align: left;
+}
+
+.profile-section h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.tagline {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.social-links {
+  margin-bottom: 35px;
+}
+
+.social-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 14px;
+  padding-right: 10px;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: var(--decoration-color);
+  margin: 0 0 35px 0;
+}
+
+.section-title {
+  font-size: 11px;
+  font-weight: normal;
+  color: var(--text-color);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.project-item {
+  margin-bottom: 25px;
+}
+
+.project-item h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.project-item h3 a {
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.project-item h4 a {
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.project-item h4 a:hover {
+  text-decoration: underline;
+}
+
+.project-item h3 a:hover {
+  text-decoration: underline;
+}
+
+.project-item p {
+  font-size: 14px;
+  color: var(--text-color);
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.4;
+}

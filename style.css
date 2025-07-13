@@ -1,0 +1,546 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  --font-family: "Space Mono", monospace;
+  --background-color: #000000;
+  --text-color: #ffffff;
+  --button-color: #111111;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* --- 1. Header Container --- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(26, 26, 26, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.logo a {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+/* --- 2. Main Navigation (Mobile Default: Hidden) --- */
+.main-nav {
+  /* THIS IS THE KEY FIX: Remove nav from layout completely */
+  display: none;
+
+  /* These styles apply ONLY when it's made visible */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--button-color);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* --- 3. The "Open" State --- */
+/* When nav-open is added, switch nav to flex to make it appear */
+.site-header.nav-open .main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Optional: Prevent body scrolling when mobile menu is open */
+body.nav-open {
+  overflow: hidden;
+}
+
+.main-nav a {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+/* --- 4. Hamburger Menu Button --- */
+.menu-toggle {
+  display: block; /* Show hamburger on mobile */
+  position: relative;
+  z-index: 1001; /* Must be higher than the .main-nav overlay */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-color);
+  transition: transform 0.3s ease-in-out, background-color 0.1s ease-in-out;
+}
+
+.hamburger::before {
+  transform: translateY(-8px);
+}
+.hamburger::after {
+  transform: translateY(5px);
+}
+
+/* Animate hamburger to an 'X' */
+.site-header.nav-open .hamburger {
+  background-color: transparent;
+}
+.site-header.nav-open .hamburger::before {
+  transform: rotate(45deg);
+}
+.site-header.nav-open .hamburger::after {
+  transform: translateY(-2px) rotate(-45deg);
+}
+
+/* =================================================================
+   Desktop Navigation Styles
+   ================================================================= */
+@media (min-width: 769px) {
+  /* Hide the hamburger on desktop */
+  .menu-toggle {
+    display: none;
+  }
+
+  /* Show the nav on desktop and style it */
+  .main-nav {
+    display: flex; /* Override the mobile 'display: none' */
+    position: static;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .main-nav a {
+    font-size: 1rem; /* Smaller font for desktop nav */
+  }
+}
+
+/* Hero section */
+/* Basic styles for the content area */
+.hero-content {
+  /* Use a monospace font stack */
+  text-align: left; /* Align text to the left as in the image */
+  padding: 2rem; /* Add some padding for spacing */
+}
+
+/* Heading styles */
+.hero-content h1 {
+  font-size: clamp(2.5rem, 8vw, 4.5rem); /* Responsive font size */
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* Paragraph styles */
+.hero-content p {
+  font-size: clamp(1rem, 2.5vw, 1.15rem); /* Responsive font size */
+  line-height: 1.8;
+  max-width: 60ch; /* Limit line length for readability */
+  margin-bottom: 2rem;
+}
+
+/* Style for the bolded text */
+.hero-content strong {
+  font-weight: 700;
+}
+
+/* Container for the buttons */
+.button-group {
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  gap: 1rem; /* Space between buttons */
+}
+
+/* Button styles */
+.btn {
+  display: inline-block;
+  background-color: var(--button-color);
+  color: var(--text-color);
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Button hover effect */
+.btn:hover {
+  scale: 105%;
+}
+
+/* About */
+
+/* About Me Section Styles */
+.about-section {
+  /* Spacing for the section */
+  padding: 5rem 2rem;
+}
+
+.about-container {
+  display: flex;
+  align-items: center; /* Vertically align text and image */
+  gap: 3rem; /* Space between text and image */
+  max-width: 1200px; /* Match the max-width of other sections */
+  margin: 0 auto; /* Center the container */
+}
+
+.about-text {
+  /* The text part takes up more space */
+  flex: 3;
+}
+
+.about-image {
+  /* The image part takes up less space */
+  flex: 2;
+}
+
+/* Heading for the About section */
+.about-text h2 {
+  font-family: var(--font-family);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+/* Styling for the non-bold part of the heading */
+.about-text h2 {
+  font-weight: 400; /* Regular weight for "me" */
+}
+
+/* Styling for the bold part of the heading */
+.about-text h2 strong {
+  font-weight: 700; /* Bold weight for "About" */
+}
+
+/* Paragraph styles */
+.about-text p {
+  font-family: var(--font-family);
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  line-height: 1.8;
+  color: var(--text-color);
+  max-width: 65ch;
+}
+
+/* Image styles */
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px; /* Creates the rounded corners */
+  object-fit: cover;
+}
+
+/* --- Responsive Design for Smaller Screens --- */
+@media (max-width: 768px) {
+  .about-container {
+    /* Stack text and image vertically */
+    flex-direction: column;
+    text-align: center; /* Center text for a better look when stacked */
+  }
+
+  .about-text p {
+    /* Center the paragraph text on small screens */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Experience */
+/* --- Experience Section (New Layout) --- */
+.experience-section {
+  font-family: var(--font-family);
+  padding: 5rem 2rem;
+}
+
+/* Container to center the content */
+.experience-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Main 'Experience' heading */
+.experience-section h2 {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 700; /* Bold weight */
+  color: var(--text-color);
+  margin-bottom: 3rem;
+}
+
+/* --- The Experience Item Layout --- */
+.experience-item {
+  /* Mobile First: Default is a single column grid */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem; /* Space between title and details on mobile */
+  padding: 2rem 0; /* Vertical spacing between job entries */
+}
+
+/* Job Title styling */
+.experience-role h3 {
+  font-size: clamp(1.1rem, 3vw, 1.25rem);
+  font-weight: 400; /* Regular weight */
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+/* Job Description styling */
+.experience-details p {
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  line-height: 1.7;
+  color: var(--text-color);
+  max-width: 70ch; /* Limit line length for readability */
+}
+
+/* Tech Stack styling */
+.experience-details .tech-stack {
+  margin-top: 1rem; /* Make it slightly brighter */
+}
+
+.experience-details .tech-stack strong {
+  color: var(--text-color); /* Make the 'Tech stack:' label white and bold */
+  font-weight: 700;
+}
+
+/* --- Desktop Layout (Media Query) --- */
+@media (min-width: 769px) {
+  .experience-item {
+    /* On desktop, switch to a 2-column grid */
+    /* The first column takes 1 part, the second takes 3 parts */
+    grid-template-columns: 1fr 3fr;
+    gap: 3rem; /* Increase gap for desktop */
+  }
+
+  .experience-role {
+    /* Align the job title to the right in its column */
+    text-align: right;
+  }
+}
+
+/* Projects */
+
+/* --- Projects Section Styles --- */
+.projects-section {
+  font-family: "Space Mono", monospace;
+  padding: 5rem 2rem;
+  /* You can alternate background colors for sections if you like */
+  /* background-color: #1a1a1a; */
+}
+
+/* Reusing the same container and heading styles */
+.projects-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects-section h2 {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 3rem;
+}
+
+/* --- The Project Item Layout --- */
+.project-item {
+  /* Mobile First: Default is a single column */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid #222; /* Adds a subtle separator line */
+}
+
+.project-item:last-child {
+  border-bottom: none; /* Remove line from the last item */
+}
+
+/* Project Title styling */
+.project-title h3 {
+  font-size: clamp(1.1rem, 3vw, 1.25rem);
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* Project Description and Tech Stack styling */
+.project-details p {
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  line-height: 1.7;
+  color: var(--text-color);
+  max-width: 70ch;
+}
+
+.project-details .tech-stack {
+  margin-top: 1rem;
+  color: var(--text-color);
+}
+
+.project-details .tech-stack strong {
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+/* --- Desktop Layout (Media Query) --- */
+@media (min-width: 769px) {
+  .project-item {
+    /* Switch to the two-column layout on desktop */
+    grid-template-columns: 1fr 3fr;
+    gap: 3rem;
+  }
+
+  .project-title {
+    text-align: right;
+  }
+}
+
+/* Contact */
+.contact-section {
+  font-family: var(--font-family);
+  padding: 5rem 2rem;
+}
+
+/* Reusing the same container and heading styles */
+.contact-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-section h2 {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 3rem;
+}
+
+/* --- The Contact Item Layout --- */
+.contact-item {
+  /* Mobile First: Default is a single column */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 2rem 0;
+}
+
+/* Title styling (left column) */
+.contact-title h3 {
+  font-size: clamp(1.1rem, 3vw, 1.25rem);
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* Details styling (right column) */
+.contact-details p {
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  line-height: 1.7;
+  color: var(--text-color);
+  max-width: 70ch;
+}
+
+/* --- Contact Links/Buttons Styling --- */
+.contact-links {
+  display: flex;
+  flex-wrap: wrap; /* Key for responsiveness */
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.contact-button {
+  display: inline-block;
+  font-family: var(--font-family);
+  color: var(--text-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--button-color);
+  border-radius: 4px;
+}
+
+/* --- Desktop Layout (Media Query) --- */
+@media (min-width: 769px) {
+  .contact-item {
+    /* Switch to the two-column layout on desktop */
+    grid-template-columns: 1fr 3fr;
+    gap: 3rem;
+  }
+
+  .contact-title {
+    /* Align the title to the right, just like the other sections */
+    text-align: right;
+  }
+}
+
+/* Footer */
+
+/* --- Site Footer Styles --- */
+.site-footer {
+  font-family: var(--font-family);
+  padding: 2rem;
+  border-top: 1px solid #222; /* Subtle separator from the content above */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; /* Pushes items to opposite ends */
+  align-items: center;
+  flex-wrap: wrap; /* Allows items to stack on small screens */
+  gap: 1rem; /* Adds space when items stack */
+}
+
+.copyright {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.back-to-top {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* On very small screens, center the content for a cleaner look */
+@media (max-width: 520px) {
+  .footer-container {
+    flex-direction: column; /* Stack vertically */
+    justify-content: center; /* Center horizontally */
+  }
+}

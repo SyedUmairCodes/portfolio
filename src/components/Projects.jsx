@@ -1,5 +1,7 @@
+import BlockforgeIcon from "../assets/eth.png";
+
 const projectIcons = {
-  blockForge: "/images/eth.png",
+  blockForge: BlockforgeIcon,
 };
 
 const projectsData = [

@@ -1,7 +1,7 @@
 const educationData = [
   {
     id: 1,
-    title: "Bachelor's in Computer Science - VU",
+    title: "Bachelor's in Computer Science",
     description:
       "Developed a deep understanding of software engineering, database architecture, and systematic problem-solving approaches crucial for designing resilient and effective systems.",
     years: "2021-2025",

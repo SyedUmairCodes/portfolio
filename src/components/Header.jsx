@@ -1,9 +1,11 @@
+import Profile from "../assets/profile.png";
+
 const Header = () => {
   const profile = {
     name: "Syed Umair Ali",
     title: "Software Engineer from Karachi, Pakistan",
     bio: "I'm a Software and Data Engineer passionate about developing practical, reliable products. My approach is rooted in clear principles, simple solutions, and consistent, results-driven execution.",
-    imageUrl: "/images/profile.png",
+    imageUrl: Profile,
   };
 
   return (

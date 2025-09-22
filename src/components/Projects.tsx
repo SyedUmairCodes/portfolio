@@ -16,6 +16,12 @@ const projectData: Project[] = [
     imageUrl: "/blockforge.png",
     href: "https://blockchainforge.netlify.app",
   },
+  {
+    title: "Heptic",
+    category: "Web development",
+    imageUrl: "/heptic.png",
+    href: "https://heptic.it",
+  },
 ];
 
 const Projects: FC = () => {

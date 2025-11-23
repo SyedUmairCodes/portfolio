@@ -1,7 +1,7 @@
 import Selfie from "../assets/selfie.png";
 const Hero = () => {
   return (
-    <section className="min-h-screen bg-neutral-950 px-6 py-10 md:px-16 md:py-12 lg:px-24 font-sans text-gray-900">
+    <section className="min-h-screen bg-neutral-950 px-6 py-10 md:px-16 md:py-12 lg:px-24 font-sans text-gray-900 [&::-webkit-scrollbar]:hidden [scrollbar-width:none] overflow-hidden">
       {/* Navigation / Logo Area */}
       <header className="mb-20 md:mb-32">
         <h2 className="text-sm font-medium uppercase tracking-[0.2em] text-white">

@@ -30,7 +30,7 @@ const Hero = () => {
           <div className="relative aspect-square w-64 overflow-hidden rounded-full md:w-80 lg:w-96">
             <img
               src={Selfie}
-              alt="Jon Lamb Portrait"
+              alt="Portrait of Syed Umair Ali"
               className="h-full w-full object-cover object-top opacity-95 grayscale-20 hover:grayscale-0 transition-all duration-500"
             />
           </div>

@@ -1,4 +1,4 @@
-import Selfie from "../assets/selfie.png";
+import Selfie from "../assets/selfie.webp";
 const Hero = () => {
   return (
     <section className="min-h-screen bg-neutral-950 px-6 py-10 md:px-16 md:py-12 lg:px-24 font-sans text-gray-900 [&::-webkit-scrollbar]:hidden [scrollbar-width:none] overflow-hidden">

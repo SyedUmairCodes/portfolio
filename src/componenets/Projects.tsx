@@ -1,5 +1,5 @@
 import React from "react";
-import BlockForge from "../assets/blockforge.png";
+import BlockForge from "../assets/blockforge.webp";
 interface ProjectItem {
   id: number;
   title: string;

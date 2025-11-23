@@ -1,5 +1,5 @@
 import React from "react";
-import HepticLogo from "../assets/heptic-logo.png";
+import HepticLogo from "../assets/heptic-logo.webp";
 interface ExperienceItem {
   id: number;
   company: string;

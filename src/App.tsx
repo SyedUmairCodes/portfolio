@@ -1,22 +1,18 @@
-import Hero from "./components/Hero";
-import ProjectsShowcase from "./components/Projects";
-import Services from "./components/Services";
-import Testimonials from "./components/Testimonials";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import gsap from "gsap";
-import Footer from "./components/Footer";
-
-gsap.registerPlugin(ScrollTrigger);
+import Experience from "./componenets/Experience";
+import Footer from "./componenets/Footer";
+import Hero from "./componenets/Hero";
+import Projects from "./componenets/Projects";
+import Skills from "./componenets/Skills";
 
 const App = () => {
   return (
-    <>
+    <main className="font-sans bg-black">
       <Hero />
-      <Services />
-      <ProjectsShowcase />
-      <Testimonials />
+      <Experience />
+      <Skills />
+      <Projects />
       <Footer />
-    </>
+    </main>
   );
 };
 

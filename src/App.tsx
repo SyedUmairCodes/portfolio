@@ -1,3 +1,4 @@
+import AboutSection from "./componenets/About";
 import Experience from "./componenets/Experience";
 import Footer from "./componenets/Footer";
 import Hero from "./componenets/Hero";
@@ -8,6 +9,7 @@ const App = () => {
   return (
     <main className="font-sans bg-black">
       <Hero />
+      <AboutSection />
       <Experience />
       <Skills />
       <Projects />

@@ -63,7 +63,7 @@ export default function HeroSection() {
           <span className="relative inline-block">
             Software Engineer
             <motion.span
-              className="absolute -bottom-1 left-0 w-full h-1 rounded-full opacity-60 bg-accent"
+              className="absolute -bottom-1 left-0 w-full h-1 rounded-full bg-accent"
               initial={{ width: 0 }}
               animate={{ width: "100%" }}
               transition={{ delay: 1, duration: 0.8 }}
@@ -86,7 +86,7 @@ export default function HeroSection() {
             </span>
           </button>
           <button
-            className="group px-8 py-3.5 rounded-full font-medium border border-[#3b414d] hover:border-accent text-white w-full sm:w-auto transition-all duration-300 active:scale-95"
+            className="group px-8 py-3.5 rounded-full font-medium border border-background hover:border-accent text-white w-full sm:w-auto transition-all duration-300 active:scale-95"
             style={{ backgroundColor: "transparent" }}
           >
             <span className="flex items-center justify-center gap-2 group-hover:text-accent transition-colors">

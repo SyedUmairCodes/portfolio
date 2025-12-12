@@ -101,15 +101,16 @@ export default function AboutSection() {
 
           <div className="space-y-6 text-lg text-gray-400 font-light leading-relaxed max-w-xl">
             <motion.p variants={textVariants}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet
-              voluptate saepe quas cum reprehenderit eligendi inventore animi
-              excepturi sapiente earum.
+              I help turn rough concepts into polished digital experiences. My
+              focus is simple: build solutions that work, communicate clearly,
+              and stand the test of time.
             </motion.p>
 
             <motion.p variants={textVariants}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet
-              voluptate saepe quas cum reprehenderit eligendi inventore animi
-              excepturi sapiente earum.
+              Whether it’s a product, a system, or a complete brand presence, I
+              approach every project with structure, intention, and respect for
+              the craft. Strong fundamentals, thoughtful execution, and a clear
+              sense of purpose.
             </motion.p>
           </div>
 

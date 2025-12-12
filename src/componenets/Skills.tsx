@@ -1,92 +1,116 @@
 import React from "react";
+import { motion } from "framer-motion";
 
-interface SkillItem {
-  name: string;
-  hoverClass: string;
-}
+// --- Configuration ---
+const THEME = {
+  colors: {
+    bg: "#1f232a",
+    cardBg: "#252a33",
+    cardHover: "#2d333e",
+    text: "#ffffff",
+    accent: "#60dafb",
+    muted: "#94a3b8",
+  },
+};
 
-const skills: SkillItem[] = [
-  {
-    name: "Web Development",
-    hoverClass: "hover:bg-blue-100 hover:border-blue-200 hover:text-blue-500",
-  },
-  {
-    name: "SQL Databases",
-    hoverClass:
-      "hover:bg-purple-100 hover:border-purple-200 hover:text-purple-500",
-  },
-  {
-    name: "APIs",
-    hoverClass:
-      "hover:bg-green-100 hover:border-green-200 hover:text-green-500",
-  },
-  {
-    name: "UI/UX",
-    hoverClass:
-      "hover:bg-yellow-100 hover:border-yellow-200 hover:text-yellow-500",
-  },
-  {
-    name: "DevOps",
-    hoverClass: "hover:bg-red-100 hover:border-red-200 hover:text-red-500",
-  },
-  {
-    name: "Data Engineering",
-    hoverClass:
-      "hover:bg-orange-100 hover:border-orange-200 hover:text-orange-500",
-  },
-  {
-    name: "Cloud Computing",
-    hoverClass:
-      "hover:bg-fuchsia-100 hover:border-fuchsia-200 hover:text-fuchsia-500",
-  },
-  {
-    name: "Backend Architecture",
-    hoverClass:
-      "hover:bg-stone-100 hover:border-stone-200 hover:text-stone-500",
-  },
-  {
-    name: "System Design",
-    hoverClass:
-      "hover:bg-violet-100 hover:border-violet-200 hover:text-violet-500",
-  },
-  {
-    name: "Technical Writing",
-    hoverClass: "hover:bg-teal-100 hover:border-teal-200 hover:text-teal-500",
-  },
+// --- Data ---
+const TOOLS = [
+  { name: "Figma", category: "Design Tool" },
+  { name: "React", category: "Javascript Library" },
+  { name: "Next.js", category: "Full Stack Framework" },
+  { name: "Tailwind CSS", category: "CSS Framework" },
+  { name: "v0", category: "AI Tool" },
+  { name: "Vite", category: "Build Tool" },
+  { name: "TypeScript", category: "Programming Language" },
+  { name: "GitHub", category: "Version Control" },
+  { name: "VS Code", category: "Code Editor" },
+  { name: "Vercel", category: "Hosting Platform" },
+  { name: "Notion", category: "Productivity Tool" },
+  { name: "Cursor", category: "AI Code Editor" },
+  { name: "Astro", category: "Web Framework" },
+  { name: "Shadcn/ui", category: "Component Library" },
 ];
 
-const Skills: React.FC = () => {
-  return (
-    <section className="min-h-20 bg-neutral-950 px-6 py-24 md:px-16 lg:px-24">
-      <div className="mx-auto max-w-7xl">
-        {/* Header */}
-        <h2 className="mb-12 text-5xl font-medium tracking-tight text-white sm:text-6xl md:mb-16">
-          Expertise
-        </h2>
+// --- Animations ---
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.08 },
+  },
+};
 
-        {/* Skills Flex Container */}
-        <div className="flex items-center justify-center flex-wrap gap-x-4  gap-y-4 md:gap-x-6 md:gap-y-6">
-          {skills.map((skill) => (
-            <div
-              key={skill.name}
-              className={`
-                cursor-default
-                rounded-full
-                border border-white
-                px-8 py-4
-                text-lg text-white
-                transition-all duration-300
-                ${skill.hoverClass}
-                hover:-translate-y-1
-              `}
-            >
-              {skill.name}
-            </div>
+const cardVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { type: "spring", stiffness: 50, damping: 15 },
+  },
+};
+
+export default function ToolsStack() {
+  return (
+    <section
+      className="min-h-screen py-20 px-6 flex justify-center"
+      style={{ backgroundColor: THEME.colors.bg, color: THEME.colors.text }}
+    >
+      <div className="max-w-7xl w-full">
+        {/* Header */}
+        <motion.h2
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="text-5xl md:text-6xl font-bold tracking-tight mb-16"
+        >
+          Tools & Stack
+        </motion.h2>
+
+        {/* Grid */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+        >
+          {TOOLS.map((tool, index) => (
+            <ToolCard key={index} tool={tool} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
-};
+}
 
-export default Skills;
+function ToolCard({ tool }: { tool: (typeof TOOLS)[0] }) {
+  return (
+    <motion.div
+      variants={cardVariants}
+      whileHover={{ scale: 1.02, backgroundColor: THEME.colors.cardHover }}
+      className="relative p-6 rounded-xl flex flex-col justify-center group overflow-hidden border border-transparent hover:border-[#60dafb]/30 transition-all duration-300 min-h-[120px]"
+      style={{ backgroundColor: THEME.colors.cardBg }}
+    >
+      {/* Background Texture (Diagonal Stripes) */}
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 10px)`,
+        }}
+      />
+
+      {/* Content */}
+      <div className="z-10 flex flex-col gap-1">
+        <h3 className="text-2xl font-bold text-white group-hover:text-[#60dafb] transition-colors duration-300">
+          {tool.name}
+        </h3>
+        <span className="text-xs uppercase tracking-wider font-semibold text-gray-500 group-hover:text-gray-400 transition-colors">
+          {tool.category}
+        </span>
+      </div>
+
+      {/* Decorative Accent Line on Hover */}
+      <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#60dafb] group-hover:w-full transition-all duration-500 ease-out" />
+    </motion.div>
+  );
+}

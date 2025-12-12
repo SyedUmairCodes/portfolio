@@ -1,43 +1,101 @@
-import Selfie from "../assets/selfie.webp";
-const Hero = () => {
-  return (
-    <section className="min-h-screen bg-neutral-950 px-6 py-10 md:px-16 md:py-12 lg:px-24 font-sans text-gray-900 [&::-webkit-scrollbar]:hidden [scrollbar-width:none] overflow-hidden">
-      {/* Navigation / Logo Area */}
-      <header className="mb-20 md:mb-32">
-        <h2 className="text-sm font-medium uppercase tracking-[0.2em] text-white">
-          Syed Umair Ali
-        </h2>
-      </header>
+import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
+import { ArrowDown, Mail } from "lucide-react";
 
-      {/* Main Content Grid */}
-      <main className="grid grid-cols-1 items-center gap-12 md:grid-cols-12">
-        {/* Left Column: Text */}
-        <div className="md:col-span-7 lg:col-span-7">
-          <h1 className="text-5xl font-medium leading-[1.1] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-[5.5rem]">
-            Building solutions that perform
-          </h1>
-
-          <div className="mt-10 max-w-lg text-lg leading-relaxed text-gray-100 md:text-xl">
-            <p>
-              I'm a software engineer building digital solutions that align with
-              user needs and support business goals.
-            </p>
-          </div>
-        </div>
-
-        {/* Right Column: Image */}
-        <div className="flex justify-center md:col-span-5 md:justify-end lg:col-span-5">
-          <div className="relative aspect-square w-64 overflow-hidden rounded-full md:w-80 lg:w-96">
-            <img
-              src={Selfie}
-              alt="Portrait of Syed Umair Ali"
-              className="h-full w-full object-cover object-top opacity-95 grayscale-20 hover:grayscale-0 transition-all duration-500"
-            />
-          </div>
-        </div>
-      </main>
-    </section>
-  );
+// --- Animation Variants ---
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1,
+    },
+  },
 };
 
-export default Hero;
+const itemVariants: Variants = {
+  hidden: { y: 20, opacity: 0, scale: 0.95 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    scale: 1,
+    transition: { type: "spring", stiffness: 100, damping: 20 },
+  },
+};
+
+const imageVariants: Variants = {
+  hidden: { scale: 0, opacity: 0 },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: { type: "spring", stiffness: 200, damping: 15 },
+  },
+};
+
+export default function HeroSection() {
+  return (
+    <div className="min-h-screen flex items-center justify-center w-full overflow-hidden relative bg-background text-accent">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[120px] opacity-10 pointer-events-none bg-accent" />
+
+      <motion.div
+        className="max-w-3xl px-6 flex flex-col items-center text-center z-10"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {/* Profile Avatar */}
+        <motion.div variants={imageVariants} className="mb-8 relative group">
+          <div className="absolute inset-0 rounded-full blur-md opacity-40 group-hover:opacity-70 bg-accent transition-opacity duration-500" />
+          <img
+            src="/profile.webp"
+            alt="Side portrait of syed umair ali"
+            className="relative w-24 h-24 md:w-28 md:h-28 rounded-full object-cover border-4 border-accent shadow-2xl"
+          />
+        </motion.div>
+
+        {/* Headline */}
+        <motion.h1
+          variants={itemVariants}
+          className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.2] mb-10 text-white font-sans"
+        >
+          Hello, I'm Umair, a Karachi based{" "}
+          <span className="relative inline-block">
+            Software Engineer
+            <motion.span
+              className="absolute -bottom-1 left-0 w-full h-1 rounded-full opacity-60 bg-accent"
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }}
+              transition={{ delay: 1, duration: 0.8 }}
+            />
+          </span>{" "}
+          creating amazing digital experiences
+        </motion.h1>
+
+        {/* Action Buttons */}
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
+        >
+          {/* Primary Action - "See my work" (Light on Dark) */}
+          <button className="group relative px-8 py-3.5 rounded-full font-medium text-background bg-white overflow-hidden w-full sm:w-auto transition-transform active:scale-95">
+            <span className="absolute inset-0 w-full h-full bg-linear-to-r from-gray-100 to-white opacity-0 group-hover:opacity-100 transition-opacity" />
+            <span className="relative flex items-center justify-center gap-2">
+              See my work
+              <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-1" />
+            </span>
+          </button>
+          <button
+            className="group px-8 py-3.5 rounded-full font-medium border border-[#3b414d] hover:border-accent text-white w-full sm:w-auto transition-all duration-300 active:scale-95"
+            style={{ backgroundColor: "transparent" }}
+          >
+            <span className="flex items-center justify-center gap-2 group-hover:text-accent transition-colors">
+              <Mail className="w-4 h-4" />
+              Let's collaborate
+            </span>
+          </button>
+        </motion.div>
+      </motion.div>
+    </div>
+  );
+}

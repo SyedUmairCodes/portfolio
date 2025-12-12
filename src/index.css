@@ -2,6 +2,8 @@
 
 @theme inline {
   --font-sans: "Funnel Sans", sans-serif;
+  --color-background: #1f232a;
+  --color-accent: #60dafb;
 }
 /* --- hide scrollbar globally --- */
 :root,

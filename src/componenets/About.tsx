@@ -57,7 +57,7 @@ export default function AboutSection() {
             {/* Image Container */}
             <div className="relative aspect-3/4 overflow-hidden bg-gray-100 mb-4 grayscale group-hover:grayscale-0 transition-all duration-500 ease-out">
               <img
-                src="/profile.webp" // Note: Fixed generic placeholder usage
+                src="/about.png" // Note: Fixed generic placeholder usage
                 alt="Professional Portrait"
                 className="w-full h-full object-cover"
               />

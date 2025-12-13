@@ -72,9 +72,7 @@ export default function AboutSection() {
                 <h3 className="text-xl font-bold text-black leading-none mb-1">
                   Syed Umair Ali
                 </h3>
-                <p className="text-sm text-gray-500 font-mono">
-                  @syedumaircodes
-                </p>
+                <p className="text-sm text-gray-500">@syedumaircodes</p>
               </div>
             </div>
 
@@ -116,9 +114,12 @@ export default function AboutSection() {
 
           <motion.div variants={textVariants} className="pt-4">
             <button className="group flex items-center gap-3 text-white font-medium hover:gap-5 transition-all duration-300">
-              <span className="border-b border-transparent group-hover:border-white transition-colors">
+              <a
+                href="https://linkedin.com/in/syedumaircodes"
+                className="border-b border-transparent group-hover:border-white transition-colors"
+              >
                 Learn more
-              </span>
+              </a>
               <ArrowUpRight className="w-5 h-5 transition-colors text-accent" />
             </button>
           </motion.div>

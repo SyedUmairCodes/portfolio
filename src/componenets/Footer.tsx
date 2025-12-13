@@ -5,7 +5,7 @@ import { ArrowUpRight, Mail } from "lucide-react";
 const socials = [
   { name: "X (Twitter)", href: "https://x.com/syedumaircodes" },
   { name: "LinkedIn", href: "https://linkedin.com/in/syedumaircodes" },
-  { name: "GitHub", href: "htpps://github.com/syedumaircodes" },
+  { name: "GitHub", href: "https://github.com/syedumaircodes" },
 ];
 
 // --- Animations ---

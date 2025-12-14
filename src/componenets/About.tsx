@@ -53,7 +53,7 @@ export default function AboutSection() {
             whileInView="visible"
             whileHover="hover"
             viewport={{ once: true, margin: "-100px" }}
-            className="relative bg-white p-4 pb-6 shadow-2xl max-w-sm w-full cursor-pointer group"
+            className="relative bg-white p-4 pb-6 shadow-2xl max-w-sm w-full group"
           >
             {/* Image Container */}
             <div className="relative aspect-3/4 overflow-hidden bg-gray-100 mb-4 grayscale group-hover:grayscale-0 transition-all duration-500 ease-out">

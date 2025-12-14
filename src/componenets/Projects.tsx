@@ -12,6 +12,7 @@ const PROJECTS = [
     description:
       "Marketing website design for web3 service provider company with markdown based blogging functionality.",
     image: blockforge,
+    href: "https://blockchainforge.netlify.app",
   },
 ];
 
@@ -105,10 +106,14 @@ function ProjectCard({ project }: { project: (typeof PROJECTS)[0] }) {
         </p>
 
         {/* Action Button */}
-        <button className="w-full mt-2 py-3.5 rounded-lg bg-white text-background font-bold text-sm tracking-wide hover:bg-accent transition-colors duration-300 flex items-center justify-center gap-2 group/btn">
+        <a
+          href={project.href}
+          target="_blank"
+          className="w-full mt-2 py-3.5 rounded-lg bg-white text-background font-bold text-sm tracking-wide hover:bg-accent transition-colors duration-300 flex items-center justify-center gap-2 group/btn"
+        >
           Live Preview
           <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
-        </button>
+        </a>
       </div>
     </motion.div>
   );

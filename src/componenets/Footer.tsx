@@ -45,15 +45,15 @@ export default function FooterSection() {
               variants={itemVariants}
               className="text-5xl md:text-6xl font-bold tracking-tight"
             >
-              Connect with Me
+              Let's Connect
             </motion.h2>
 
             <motion.p
               variants={itemVariants}
               className="text-lg font-light text-gray-400 max-w-sm"
             >
-              No commitments. Just a quick chat to see if we click and how we
-              can create something amazing together.
+              I’m always open to a chat. Connect with me online to follow my
+              process or reach out directly for a collaboration.
             </motion.p>
 
             <motion.div variants={itemVariants} className="mt-4">

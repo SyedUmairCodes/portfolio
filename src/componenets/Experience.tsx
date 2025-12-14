@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
-import { Download, ArrowUpRight } from "lucide-react";
+import { Download } from "lucide-react";
 
 const EXPERIENCES = [
   {
@@ -99,8 +99,6 @@ function ExperienceItem({ data }: { data: (typeof EXPERIENCES)[0] }) {
         <div className="md:col-span-6 flex flex-col gap-3">
           <h3 className="text-2xl font-semibold group-hover:text-accenttransition-colors flex items-center gap-2">
             {data.role}
-            {/* Subtle arrow that appears on hover */}
-            <ArrowUpRight className="w-5 h-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-accent" />
           </h3>
           <p className="text-lg leading-relaxed font-light max-w-2xl text-white/70">
             {data.description}

@@ -35,7 +35,10 @@ const cardVariants: Variants = {
 
 export default function DetailedProjects() {
   return (
-    <section className="min-h-screen py-24 px-6 flex justify-center bg-background text-white">
+    <section
+      className="min-h-screen py-24 px-6 flex justify-center bg-background text-white"
+      id="projects"
+    >
       <div className="max-w-7xl w-full">
         {/* Header */}
         <motion.div

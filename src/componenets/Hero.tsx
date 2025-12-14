@@ -77,29 +77,20 @@ export default function HeroSection() {
           variants={itemVariants}
           className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
         >
-          {/* Primary Action - "See my work" (Light on Dark) */}
-          <button className="group relative px-8 py-3.5 rounded-full font-medium text-background bg-white overflow-hidden w-full sm:w-auto transition-transform active:scale-95">
-            <span className="absolute inset-0 w-full h-full bg-linear-to-r from-gray-100 to-white opacity-0 group-hover:opacity-100 transition-opacity" />
-            <a
-              href="#projects"
-              className="relative flex items-center justify-center gap-2"
-            >
-              See my work
-              <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-1" />
-            </a>
-          </button>
-          <button
-            className="group px-8 py-3.5 rounded-full font-medium border border-background hover:border-accent text-white w-full sm:w-auto transition-all duration-300 active:scale-95"
-            style={{ backgroundColor: "transparent" }}
+          <a
+            href="#projects"
+            className="group flex items-center justify-center gap-2 px-8 py-3.5 rounded-full font-medium text-background bg-white overflow-hidden w-full sm:w-auto transition-transform active:scale-95"
           >
-            <a
-              href="mailto:syedumairali.617@gmail.com"
-              className="flex items-center justify-center gap-2 group-hover:text-accent transition-colors"
-            >
-              <Mail className="w-4 h-4" />
-              Let's collaborate
-            </a>
-          </button>
+            See my work
+            <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-1" />
+          </a>
+          <a
+            href="mailto:syedumairali.617@gmail.com"
+            className="flex items-center justify-center gap-2 group px-8 py-3.5 rounded-full font-medium border border-background hover:border-accent text-white w-full sm:w-auto transition-all duration-300 active:scale-95 bg-transparent"
+          >
+            <Mail className="w-4 h-4" />
+            Let's collaborate
+          </a>
         </motion.div>
       </motion.div>
     </div>

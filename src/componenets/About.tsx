@@ -70,9 +70,9 @@ export default function AboutSection() {
             {/* Card Footer Text */}
             <div className="flex justify-between items-end">
               <div>
-                <h3 className="text-xl font-bold text-black leading-none mb-1">
+                <h1 className="text-xl font-bold text-black leading-none mb-1">
                   Syed Umair Ali
-                </h3>
+                </h1>
                 <p className="text-sm text-gray-500">@syedumaircodes</p>
               </div>
             </div>
@@ -120,6 +120,7 @@ export default function AboutSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="border-b border-transparent group-hover:border-white transition-colors"
+                aria-label="Get to know me on LinkedIn"
               >
                 Learn more
               </a>

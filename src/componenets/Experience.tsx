@@ -48,16 +48,14 @@ export default function ExperienceSection() {
             Experience
           </h2>
 
-          <button className="group flex items-center gap-2 px-5 py-2.5 rounded-full border border-gray-700 hover:border-accent text-white transition-colors duration-300">
-            <a
-              href="/umair-resume.pdf"
-              download="umair-resume.pdf"
-              className="text-sm font-medium group-hover:text-accent transition-colors"
-            >
-              Download CV
-            </a>
+          <a
+            href="/umair-resume.pdf"
+            download="umair-resume.pdf"
+            className="group flex items-center gap-2 px-5 py-2.5 rounded-full border border-gray-700 hover:border-accent text-white transition-colors duration-300 text-sm font-medium group-hover:text-accent"
+          >
+            Download CV
             <Download className="w-4 h-4 group-hover:text-accentgroup-hover:translate-y-0.5 transition-all" />
-          </button>
+          </a>
         </motion.div>
 
         {/* Experience List */}

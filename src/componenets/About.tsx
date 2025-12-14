@@ -120,9 +120,9 @@ export default function AboutSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="border-b border-transparent group-hover:border-white transition-colors"
-                aria-label="Get to know me on LinkedIn"
+                aria-label="View my LinkedIn Profile"
               >
-                Learn more
+                View my LinkedIn Profile
               </a>
               <ArrowUpRight className="w-5 h-5 transition-colors text-accent" />
             </button>

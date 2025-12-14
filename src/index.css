@@ -5,6 +5,7 @@
   --color-background: #1f232a;
   --color-accent: #60dafb;
 }
+
 /* --- hide scrollbar globally --- */
 :root,
 html,
@@ -21,4 +22,8 @@ body::-webkit-scrollbar,
 #root::-webkit-scrollbar {
   width: 0;
   height: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }

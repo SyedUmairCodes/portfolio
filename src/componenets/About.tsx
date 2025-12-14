@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import AboutImage from "../assets/about.webp";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -57,7 +58,7 @@ export default function AboutSection() {
             {/* Image Container */}
             <div className="relative aspect-3/4 overflow-hidden bg-gray-100 mb-4 grayscale group-hover:grayscale-0 transition-all duration-500 ease-out">
               <img
-                src="/about.png" // Note: Fixed generic placeholder usage
+                src={AboutImage}
                 alt="Professional Portrait"
                 className="w-full h-full object-cover"
               />
@@ -116,6 +117,8 @@ export default function AboutSection() {
             <button className="group flex items-center gap-3 text-white font-medium hover:gap-5 transition-all duration-300">
               <a
                 href="https://linkedin.com/in/syedumaircodes"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="border-b border-transparent group-hover:border-white transition-colors"
               >
                 Learn more

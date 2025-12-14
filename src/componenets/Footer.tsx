@@ -59,10 +59,13 @@ export default function FooterSection() {
             <motion.div variants={itemVariants} className="mt-4">
               <button className="group relative px-8 py-3 bg-white text-background font-semibold rounded-lg overflow-hidden transition-transform active:scale-95">
                 <div className="absolute inset-0 bg-accent translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out" />
-                <span className="relative z-10 flex items-center gap-2 group-hover:text-white transition-colors duration-300">
+                <a
+                  href="mailto:syedumairali.617@gmail.com"
+                  className="relative z-10 flex items-center gap-2 group-hover:text-white transition-colors duration-300"
+                >
                   <Mail className="w-4 h-4" />
                   Get in Touch
-                </span>
+                </a>
               </button>
             </motion.div>
           </div>
@@ -73,6 +76,8 @@ export default function FooterSection() {
               <motion.a
                 key={social.name}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 variants={itemVariants}
                 className="group flex items-center gap-3 text-xl md:text-2xl font-medium cursor-pointer"
               >
